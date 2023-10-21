@@ -23,7 +23,7 @@ for key, value in seqs.items():
     if gc_cont(value) > max_gc:
         max_seq = key
         max_gc = gc_cont(value)
-result.write(max_seq + "\n" + str(round(max_gc, 6)))
+result.write(max_seq + "\n" + "{:.6f}".format(max_gc))
 
 # Close files
 result.close()
