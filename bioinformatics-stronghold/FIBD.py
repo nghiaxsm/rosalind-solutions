@@ -6,15 +6,12 @@ result = open("fibd.txt", "w")
 # Main codes
 n = int(data[0])
 m = int(data[1])
-def fibd(n, m):
-    print(n, m)
-    if n == 1 or n == 2:
-        return 1
-    elif n < m:
-        return fibd(n-1, m) + fibd(n-2, m)
-    else:
-        return fibd(n-1, m) + fibd(n-2,m) - fibd(n-m, m)
-result.write(str(fibd(n, m)))
+fibd = [1] + [0]*(m-1)
+for i in range(n-1):
+    new_born = sum(fibd[1:])
+    fibd[1:] = fibd[0:-1]
+    fibd[0] = new_born
+result.write(str(sum(fibd)))
 
 # Close files
 result.close()
