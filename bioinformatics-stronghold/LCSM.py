@@ -11,8 +11,7 @@ for i in data:
     else:
         seqs[list(seqs.keys())[-1]] += i.strip()
 n = len(min(list(seqs.values())))
-for i in range(n, 0, -1):
-    for seq in seqs.values():
+
         
 
 # Close files
